@@ -3,18 +3,18 @@
 Download the file [`custom-alias`](custom-alias):
 
 ```sh
-curl -O https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
+curl -O https://raw.githubusercontent.com/bu3/my-git-aliases/main/custom-alias
 ```
 
 Typical usage for a typical user:
 
-  * Save this file as a dot file in your home directory: `~/.gitalias.txt`
+  * Save this file as a dot file in your home directory: `~/.custom-alias`
 
-  * `git config --global include.path ~/.gitalias.txt` in terminal.  Or manually edit your git config dot file in your home directory such as `~/.gitconfig`, include the path to this file.
+  * `git config --global include.path ~/.custom-alias` in terminal.  Or manually edit your git config dot file in your home directory such as `~/.gitconfig`, include the path to this file.
 
-Example file `~/.gitconfig` with an entry to include the file `~/.gitalias.txt`:
+Example file `~/.gitconfig` with an entry to include the file `~/.custom-alias`:
 
 ```gitalias
 [include]
-  path = gitalias.txt
+  path = custom-alias
 ```
