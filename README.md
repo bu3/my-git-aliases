@@ -16,5 +16,5 @@ Example file `~/.gitconfig` with an entry to include the file `~/.custom-alias`:
 
 ```gitalias
 [include]
-  path = custom-alias
+  path = .custom-alias
 ```
