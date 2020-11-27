@@ -3,5 +3,6 @@
 	br = branch
 	ci = commit
 	st = status
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
 	ls-gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$3 == \"[gone]\" {print $1}'"
 	gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$3 == \"[gone]\" {print $1}' | xargs git branch -D"
