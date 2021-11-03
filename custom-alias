@@ -6,3 +6,4 @@
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
 	ls-gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$3 == \"[gone]\" {print $1}'"
 	gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$3 == \"[gone]\" {print $1}' | xargs git branch -D"
+	merge-up = ! "git fetch upstream && git merge upstream/$(git rev-parse --abbrev-ref HEAD) && git push"
