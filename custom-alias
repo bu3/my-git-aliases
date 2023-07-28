@@ -4,6 +4,11 @@
 	ci = commit
 	st = status
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
+	# lists all the matching branches that have deleted in upstream
 	ls-gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$3 == \"[gone]\" {print $1}'"
+	# deletes all the matching branches that have deleted in upstream
 	gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$3 == \"[gone]\" {print $1}' | xargs git branch -D"
+	# rebase on top of the matching branch in upstream
 	merge-up = ! "git fetch upstream && git rebase upstream/$(git rev-parse --abbrev-ref HEAD) && git push -f origin $(git rev-parse --abbrev-ref HEAD)"
+	# push current branch to origin
+	pob = ! "git push -u origin $(git rev-parse --abbrev-ref HEAD)"
